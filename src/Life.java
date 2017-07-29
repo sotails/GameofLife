@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 
 import java.awt.Button;
 import java.awt.Graphics;
-public class LifeGui {
+public class Life {
 	private Cell[][] board;
 	private JFrame mainFrame;
 	public static void main(String[] args) {
