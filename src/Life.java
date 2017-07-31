@@ -75,6 +75,10 @@ public class Life {
 	private Cell[][] getBoard() {
 		return board;
 	}
+	
+	private JFrame getFrame() {
+		return mainFrame;
+	}
 
 	private void setBoard(Cell[][] x) {
 		board = x;
