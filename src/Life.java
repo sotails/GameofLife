@@ -19,6 +19,14 @@ public class Life {
 				bore.getBoard()[i][j] = new Cell();
 			}
 		}
+		for (int i = 0; i < bore.getBoard().length; i++) {
+			for (int j = 0; j < bore.getBoard()[i].length; j++) {
+				double x = Math.random()*1;
+				if(x>=.8) {
+					bore.getBoard()[i][j].setLife(true);;
+				}
+			}
+		}
 		
 //		do {
 
