@@ -7,13 +7,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Graphics;
-public class Life {
-	private Cell[][] board;
-	private JFrame mainFrame;
+public class Life extends JFrame{
+	
 	public static void main(String[] args) {
 		
-		Life bore = new Life();
+		GUI bore = new GUI();
 		for (int i = 0; i < bore.getBoard().length; i++) {
 			for (int j = 0; j < bore.getBoard()[i].length; j++) {
 				bore.getBoard()[i][j] = new Cell();
@@ -61,52 +61,8 @@ public class Life {
 //			bore.setBoard(n);
 //		} while (x==1);
 	}
-	
-	
-
-	private Life() {
-		
-		mainFrame = new JFrame("Conways Game of Life");
-	      mainFrame.setSize(600,600);
-	      mainFrame.setLayout(new GridLayout(3, 1));
-	      mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	      mainFrame.setLocationRelativeTo(null);
-	      mainFrame.setLayout(new GridLayout(10,10));
-	      for(int x =0; x<100;x++){
-	    	  mainFrame.add(new JCheckBox());
-	      }
-	      mainFrame.setVisible(true); 
-	      
-	      
-	      board = new Cell[100][100];
-	}
-	private Cell[][] getBoard() {
-		return board;
-	}
-	
-	private JFrame getFrame() {
-		return mainFrame;
-	}
-
-	private void setBoard(Cell[][] x) {
-		board = x;
-	}
-
-	private int countSurrounding(Cell[][] xi, int a, int b) {
-		int count = 0;
-		int[][] surrounding = { { a - 1, b - 1 }, { a - 1, b }, { a - 1, b + 1 }, { a, b - 1 }, { a, b + 1 },
-				{ a + 1, b - 1 }, { a + 1, b }, { a + 1, b + 1 } };
-		for(int i[]: surrounding){
-			try{
-				if(xi[i[0]][i[1]].getLife()==true){
-					count++;
-				}
-			} catch(ArrayIndexOutOfBoundsException e){}
-		}
-		return count;
-	}
-	
-	
 }
 
+	
+	
 
