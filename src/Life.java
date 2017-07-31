@@ -1,6 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class Life {
@@ -22,13 +23,17 @@ public class Life {
 				}
 			}
 		}
-		GUI gol = new GUI();
+		
+		JFrame mainFrame = new JFrame();
+		mainFrame.getContentPane().add(bore);
+		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setVisible(true);
 		new Timer(100, new ActionListener() {
 
-
+			
 			public void actionPerformed(ActionEvent e) {
-				gol.newUpdate(bore.getBoard());
-				gol.repaint();
+				bore.newUpdate(bore.getBoard());
+				bore.repaint();
 			}
 		}).start();
 	}
