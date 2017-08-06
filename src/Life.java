@@ -26,7 +26,7 @@ public class Life {
 			}
 		}
 
-		JFrame mainFrame = new JFrame();
+		JFrame mainFrame = new JFrame("Conway's Game of Life");
 		mainFrame.getContentPane().add(bore);
 		mainFrame.pack();
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,7 +40,7 @@ public class Life {
 				}
 			};
 		
-		Timer tim = new Timer(100,al);
+		Timer tim = new Timer(200,al);
 		tim.start();
 		while(true);
 	}
