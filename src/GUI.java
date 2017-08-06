@@ -32,7 +32,7 @@ public class GUI extends JPanel {
 			for (int j = 0; j < board[i].length; j++) {
 				if (board[i][j].getLife() == true) {
 					g.setColor(Color.blue);
-					g.fillRect(j*4, i*4, 4, 4);
+					g.fillRect(j*5, i*5, 5, 5);
 				}
 			}
 		}
@@ -67,6 +67,9 @@ public class GUI extends JPanel {
 		}
 		return count;
 	}
+	  public Dimension getPreferredSize() {
+	        return new Dimension(board.length * 5, board[0].length * 5);
+	    }
 
 	public void newUpdate(Cell[][] x) {
 		Cell[][] n = new Cell[100][100];
@@ -78,9 +81,12 @@ public class GUI extends JPanel {
 		for (int i = 0; i < x.length; i++) {
 			for (int j = 0; j < x[0].length; j++) {
 
-				if ((countSurrounding(x, i, j) < 2) || (countSurrounding(x, i, j) > 3)) {
+				if ((countSurrounding(x, i, j) == 3)) {
+					n[i][j].setLife(true);
+				} else if((countSurrounding(x,i,j)>3) || (countSurrounding(x,i,j)<2)) {
 					n[i][j].setLife(false);
-				} else {
+					
+				} else if(x[i][j].getLife()==true && countSurrounding(x, i, j)==2) {
 					n[i][j].setLife(true);
 				}
 
